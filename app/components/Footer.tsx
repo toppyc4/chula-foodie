@@ -1,26 +1,80 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="h-[15vh] p-4 bg-slate-700 content-around">
-      <div className="grid container grid-cols-3 mx-auto content-around items-center text-cente">
-        <div className="flex m-auto content-center items-center">
-          <Link href={"/"} className="p-4 bg-yellow-300">
-            Home
+    <>
+      {/* <footer className="container flex flex-col h-[15vh] bg-slate-700">
+        <div className="grid grid-cols-3 gap-4 m-auto content-around items-center align-middle">
+          <Link href={"/"}>
+            <div className="flex bg-lime-500 hover:bg-lime-400 text-white font-bold my-auto mr-3 p-1 border-solid border-b-4 border-lime-700 hover:border-lime-500 rounded overflow-hidden items-center text-center content-center">
+              <p className="my-auto mx-auto text-2xl">Home</p>
+            </div>
+          </Link>
+          <Link href={"/history"}>
+            <div className="flex bg-lime-500 hover:bg-lime-400 text-white font-bold my-auto p-1 border-solid border-b-4 border-lime-700 hover:border-lime-500 rounded overflow-hidden items-center text-center content-center">
+              <p className="my-auto mx-auto text-2xl">History</p>
+            </div>
+          </Link>
+
+          <Link
+            href={`/user`}
+            className="flex bg-lime-500 hover:bg-lime-400 text-white font-bold mx-auto p-1 border-solid border-b-4 border-lime-700 hover:border-lime-500 rounded overflow-hidden align-center"
+          >
+            <Image
+              src={"/img/question-mark-profile.jpg"}
+              width={50}
+              height={50}
+              alt="profile pic"
+              className="w-[54px] h-[54px] self-center cursor-pointer rounded-full"
+              referrerPolicy="no-referrer"
+            />
           </Link>
         </div>
-        <div className="flex m-auto content-center items-center">
-          <Link href={"/Ate"} className="p-4 bg-yellow-300">
-            Ate
-          </Link>
-        </div>
-        <div className="flex m-auto content-center items-center">
-          <Link href={"/user"} className="p-4 bg-yellow-300">
-            User
-          </Link>
-        </div>
-      </div>
-    </footer>
+      </footer> */}
+      <footer className="h-[13vh] flex items-center justify-around px-4 border-t-2 bg-slate-700 border-gray-300">
+        <Link
+          href={"/"}
+          className="focus:outline-none bg-lime-500 hover:bg-lime-400 border-solid border-b-4 border-b-lime-700 p-2 rounded-md"
+        >
+          <Image
+            src={"/icon/home.svg"}
+            width={50}
+            height={50}
+            alt="profile pic"
+            className="cursor-pointer rounded-full"
+            referrerPolicy="no-referrer"
+          />
+        </Link>
+        <Link
+          href={"/history"}
+          className="focus:outline-none bg-lime-500 hover:bg-lime-400 border-solid border-b-4 border-b-lime-700 p-2 rounded-md"
+        >
+          <Image
+            src={"/icon/clock.svg"}
+            width={50}
+            height={50}
+            alt="profile pic"
+            className="cursor-pointer rounded-full"
+            referrerPolicy="no-referrer"
+          />
+        </Link>
+
+        <Link
+          href={`/user`}
+          className="focus:outline-none bg-lime-500 hover:bg-lime-400 border-solid border-b-4 border-b-lime-700 p-2 rounded-md"
+        >
+          <Image
+            src={"/img/question-mark-profile.jpg"}
+            width={50}
+            height={50}
+            alt="profile pic"
+            className="cursor-pointer rounded-full"
+            referrerPolicy="no-referrer"
+          />
+        </Link>
+      </footer>
+    </>
   );
 };
 

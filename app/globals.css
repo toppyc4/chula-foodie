@@ -27,14 +27,12 @@ body {
 }
 
 @layer components {
-
   .grid-list-items {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    height: 66vh;
+    grid-template-columns: repeat(2, minmax(0, 0.5fr));
+    height: 60vh;
     margin-top: 0.69rem;
     background-color: azure;
     overflow: auto;
   }
-  
 }
