@@ -25,6 +25,8 @@ const PostManager = ({ params }: { params: { slug: string } }) => {
     published: true,
   };
 
+  console.log(`params slug: ${params.slug}`);
+
   const uid: any = auth?.currentUser?.uid;
   const postRef = doc(getFirestore(), "users", uid, "shop", params.slug);
 

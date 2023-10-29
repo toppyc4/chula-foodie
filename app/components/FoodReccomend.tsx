@@ -1,8 +1,19 @@
 "use client";
-import FoodItem from "./Fooditem";
 
-export default function FoodReccomend() {
-  const food: any = [1, 2, 3, 4, 5, 6];
+import FoodItem from "./FoodItem";
+
+export default async function FoodReccomend({ posts }: { posts: any }) {
+  // console.log(`params: ${params}`);
+  // console.log(`params slug: ${params.slug}`);
+  // const province = params;
+  // const provinceDocs = await getPostsWithProvince(province);
+  // const postQuery = query(
+  //   collection(getFirestore(), provinceDocs.ref.path, "posts"),
+  //   where("published", "==", true),
+  //   orderBy("createdAt", "desc"),
+  //   limit(30)
+  // );
+  // const foodPosts = await getDocs();
 
   return (
     <div>
@@ -23,9 +34,9 @@ export default function FoodReccomend() {
         </div>
       </div>
       <div className="grid-list-items bg-pink-200">
-        {food?.map((i: any) => (
+        {posts?.map((post: any, i: any) => (
           <div className="m-2">
-            <FoodItem key={i} />
+            <FoodItem post={post} key={i} />
           </div>
         ))}
       </div>

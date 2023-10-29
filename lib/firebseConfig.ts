@@ -12,6 +12,7 @@ import {
   getDocs,
   query,
   limit,
+  collectionGroup,
 } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
@@ -83,24 +84,40 @@ export function postToJSON(doc: any) {
   return {
     ...data,
     // firestore timestamp NOT serializable to JSON. Must convert to milliseconds
-    createdAt: data?.createdAt.toMillis() || 0,
-    updatedAt: data?.updatedAt.toMillis() || 0,
+    // createdAt: data?.createdAt.toMillis() || 0,
+    // updatedAt: data?.updatedAt.toMillis() || 0,
   };
 }
 
 /**
  * Gets a provinces/{province} document with province
- * @param {string} province
+ * @param {string} canteen
  */
-// export async function getPostsWithProvince(province: string) {
-//   // querying data from provinces doc by searching for province field
-//   const q = query(
-//     collection(firestore, "provinces"),
-//     where("province", "==", province),
-//     limit(1)
-//   )
+export async function getPostsWithCanteen(canteen: string) {
+  // querying data from provinces doc by searching for province field
+  // const q = query(
+  //   collection(firestore, "canteens"),
+  //   where("canteen", "==", canteen)
+  //   // limit(1)
+  // );
 
-//   const provinceDocs = (await getDocs(q)).docs[0]
+  const q2 = query(
+    collectionGroup(firestore, "menu"),
+    where("canteen", "==", canteen)
+    // limit(1)
+  );
 
-//   return provinceDocs
-// }
+  const menu = await getDocs(q2);
+  // const canteenDocs = (await getDocs(q2)).docs[0];
+  const canteenDocs = await getDocs(q2);
+  // console.log(`[getPostsWithCanteen] query: ${JSON.stringify(q)}`);
+  console.log(`[getPostsWithCanteen] menu: ${menu}`);
+
+  // console.log(
+  //   `[getPostsWithCanteen] canteenDocs2: ${JSON.stringify(canteenDocs2)}`
+  // );
+  // menu.forEach((m) => {
+  //   console.log(`m.data: ${JSON.stringify(m.data())}`);
+  // });
+  return canteenDocs;
+}

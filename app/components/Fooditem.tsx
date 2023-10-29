@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const FoodItem = (): JSX.Element => {
+const FoodItem = ({ post }: { post: any }): JSX.Element => {
   return (
     <div
       className="max-w-sm max-h-[60vh] my-[0.5rem] bg-neutral-100 overflow-hidden shadow-lg"
@@ -20,7 +20,10 @@ const FoodItem = (): JSX.Element => {
           />
         </Link>
       </div>
-      <h1 className="font-bold text-center">Food name</h1>
+      <div className="text-center">
+        <h1 className="font-bold">{post.name}</h1>
+        <span>Price: {post.price}</span>
+      </div>
     </div>
   );
 };

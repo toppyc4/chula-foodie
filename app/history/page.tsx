@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import SemiFoodItem from "../components/SemiFoodItem";
 
@@ -11,12 +12,13 @@ const KinRaiMa = () => {
       <Navbar />
       <div className="mt-[5vh] mx-[2vh]">
         <h1 className="text-3xl">History (กินไรมา)</h1>
-        <div className="flex flex-col bg-pink-300 p-4 overflow-auto">
+        <div className="flex flex-col p-4 overflow-auto">
           {foodHistory.map((i) => (
             <SemiFoodItem />
           ))}
         </div>
       </div>
+      <Footer />
     </>
   );
 };

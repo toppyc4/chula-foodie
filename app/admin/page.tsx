@@ -1,4 +1,5 @@
 import Navbar2 from "../components/Navbar2";
+import Footer from "../components/Footer";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,7 +7,7 @@ import Link from "next/link";
 const AdminPostPage = () => {
   const posts = [1, 2, 3, 4, 5];
   return (
-    <div>
+    <>
       <Navbar2 />
       <div className="max-h-[80vh]">
         <div className="relative w-full h-[30vh] bg-fixed overflow-hidden flex">
@@ -49,7 +50,8 @@ const AdminPostPage = () => {
           </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

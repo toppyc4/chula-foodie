@@ -32,9 +32,9 @@ const Footer = () => {
           </Link>
         </div>
       </footer> */}
-      <footer className="h-[13vh] flex items-center justify-around px-4 border-t-2 bg-slate-700 border-gray-300">
+      <footer className="h-[13vh] flex items-center justify-around px-4 border-t-2 bg-slate-700 border-gray-300 sticky bottom-0">
         <Link
-          href={"/"}
+          href={"/main"}
           className="focus:outline-none bg-lime-500 hover:bg-lime-400 border-solid border-b-4 border-b-lime-700 p-2 rounded-md"
         >
           <Image

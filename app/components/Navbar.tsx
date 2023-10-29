@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <nav className="w-screen h-[13vh] bg-red-800 px-[4vw] flex justify-btween items-center drops-shadow-lg">
-      <Link href="/">
+    <nav className="w-screen h-[13vh] bg-red-800 px-[4vw] flex justify-btween items-center drops-shadow-lg sticky top-0">
+      <Link href="/main">
         <h1 className="text-2xl font-bold text-white justify-self-start cursor-pointer ">
           {" "}
           Chula Foodie{" "}
