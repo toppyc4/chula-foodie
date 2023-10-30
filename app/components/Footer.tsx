@@ -32,14 +32,14 @@ const Footer = () => {
           </Link>
         </div>
       </footer> */}
-      <footer className="h-[13vh] flex items-center justify-around px-4 border-t-2 bg-slate-700 border-gray-300 sticky bottom-0">
+      <footer className="h-[13vh] flex items-center justify-around px-4 border-t-2 bg-gray-100 border-gray-300 sticky bottom-0">
         <Link href={"/main"} className="p-2 rounded-md">
           <Image
             src={"/icon/home.svg"}
             width={50}
             height={50}
             alt="profile pic"
-            className="cursor-pointer rounded-full invert"
+            className="cursor-pointer rounded-full"
             referrerPolicy="no-referrer"
           />
         </Link>
@@ -49,7 +49,7 @@ const Footer = () => {
             width={50}
             height={50}
             alt="profile pic"
-            className="cursor-pointer rounded-full invert"
+            className="cursor-pointer rounded-full"
             referrerPolicy="no-referrer"
           />
         </Link>

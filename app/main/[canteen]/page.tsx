@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import FoodReccomend from "../../components/FoodReccomend";
 import Navbar2 from "../../components/Navbar2";
@@ -46,7 +47,7 @@ export default async function HomeProvincePage({ params }: { params: any }) {
         <Navbar2 />
       </div>
       <main className="h-[74vh] mx-10 row-span-8 col-span-full">
-        <FoodReccomend posts={posts} />
+        <FoodReccomend posts={posts} canteen={canteen} />
       </main>
       <div className="h-[13vh]">
         <Footer />

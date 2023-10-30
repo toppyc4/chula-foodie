@@ -28,7 +28,7 @@ export default function login(): JSX.Element {
     <main className="h-[100vh]">
       {userData.user && !userData.username && <UsernameForm />}
       <h1>loginPage; you probably already have an username </h1>
-      <UsernameForm />
+      {!userData.user && !userData.username && <UsernameForm />}
     </main>
   );
 }
