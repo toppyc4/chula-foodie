@@ -1,6 +1,6 @@
 import Image from "next/image";
 import FoodReccomend from "../../components/FoodReccomend";
-import Navbar from "../../components/Navbar";
+import Navbar2 from "../../components/Navbar2";
 import Footer from "../../components/Footer";
 
 import {
@@ -16,7 +16,7 @@ import {
   getPostsWithCanteen,
   postToJSON,
   firestore,
-} from "../../../lib/firebseConfig";
+} from "../../../lib/firebaseConfig";
 
 export default async function HomeProvincePage({ params }: { params: any }) {
   let posts = null;
@@ -43,7 +43,7 @@ export default async function HomeProvincePage({ params }: { params: any }) {
   return (
     <div className="h-full grid grid-rows-10">
       <div className="h-[13vh]">
-        <Navbar />
+        <Navbar2 />
       </div>
       <main className="h-[74vh] mx-10 row-span-8 col-span-full">
         <FoodReccomend posts={posts} />

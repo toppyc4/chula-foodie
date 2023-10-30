@@ -1,10 +1,10 @@
-import Navbar from "@/app/components/Navbar";
+import Navbar2 from "@/app/components/Navbar2";
 import PostForm from "@/app/components/PostForm";
 import { getFirestore, doc } from "firebase/firestore";
 import Image from "next/image";
 import Link from "next/link";
 
-import { auth, firestore } from "../../../lib/firebseConfig";
+import { auth, firestore } from "../../../lib/firebaseConfig";
 
 const PostManager = ({ params }: { params: { slug: string } }) => {
   const post: {
@@ -32,7 +32,7 @@ const PostManager = ({ params }: { params: { slug: string } }) => {
 
   return (
     <div>
-      <Navbar />
+      <Navbar2 />
       <div className="max-w-[69vw] mx-auto mt-8">
         <Image
           src={"/img/question-mark-profile.jpg"}

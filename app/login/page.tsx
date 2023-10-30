@@ -1,6 +1,6 @@
 "use client";
 import { useCallback, useContext, useState, useEffect } from "react";
-import { UserContext } from "../../lib/context";
+import { UserContext } from "../Context/store";
 import { useRouter } from "next/navigation";
 
 import {
@@ -10,7 +10,7 @@ import {
   getDoc,
   serverTimestamp,
 } from "firebase/firestore";
-import { auth } from "../../lib/firebseConfig";
+import { auth } from "../../lib/firebaseConfig";
 import { signOut } from "firebase/auth";
 
 import debounce from "lodash.debounce";
@@ -18,15 +18,15 @@ import toast from "react-hot-toast";
 
 export default function login(): JSX.Element {
   const router = useRouter();
-  const { user, username } = useContext(UserContext);
+  const { userData } = useContext(UserContext);
 
-  if (user && username) {
+  if (userData.user && userData.username) {
     router.push("/main");
   }
 
   return (
     <main className="h-[100vh]">
-      {user && !username && <UsernameForm />}
+      {userData.user && !userData.username && <UsernameForm />}
       <h1>loginPage; you probably already have an username </h1>
       <UsernameForm />
     </main>
@@ -58,27 +58,27 @@ function UsernameForm(): JSX.Element | null {
   const [loading, setLoading] = useState(false);
 
   const router = useRouter();
-  const { user, username } = useContext(UserContext);
+  const { userData } = useContext(UserContext);
 
   const onSubmit = async (e: any) => {
     e.preventDefault();
 
     // Create ref for both documents
-    const userDoc = doc(getFirestore(), "users", user.uid);
+    const userDoc = doc(getFirestore(), "users", userData.user.uid);
     const usernameDoc = doc(getFirestore(), "usernames", formValue);
 
     // Commit both docs together as a batch write.
     const batch = writeBatch(getFirestore());
     batch.set(userDoc, {
       username: formValue,
-      photoURL: user.photoURL,
-      displayName: user.displayName,
+      photoURL: userData.user.photoURL,
+      displayName: userData.user.displayName,
       Facebook: null,
       Line: null,
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp(),
     });
-    batch.set(usernameDoc, { uid: user.uid });
+    batch.set(usernameDoc, { uid: userData.user.uid });
 
     await batch
       .commit()
@@ -131,7 +131,7 @@ function UsernameForm(): JSX.Element | null {
   );
 
   return (
-    (!username && (
+    (!userData.username && (
       <>
         <nav className="flex justify-end">
           <button
@@ -144,7 +144,7 @@ function UsernameForm(): JSX.Element | null {
             Cancel
           </button>
         </nav>
-        <section className="h-[90%] flex mt-8 ml-40">
+        <section className="flex mx-auto">
           <div className="">
             <h3 className="text-4xl mb-3">Choose your username</h3>
             <form onSubmit={onSubmit} className="w-full max-w-sm">

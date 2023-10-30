@@ -2,7 +2,7 @@
 
 import FoodItem from "./FoodItem";
 
-export default async function FoodReccomend({ posts }: { posts: any }) {
+export default function FoodReccomend({ posts }: { posts: any }) {
   // console.log(`params: ${params}`);
   // console.log(`params slug: ${params.slug}`);
   // const province = params;

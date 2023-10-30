@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import Navbar from "../components/Navbar";
+import Navbar2 from "../components/Navbar2";
 
 const UserPage = () => {
   return (
     <>
-      <Navbar />
+      <Navbar2 />
       <main className="h-fit w-full flex justify-center items-center">
         <div className="h-full flex flex-col">
           <Image

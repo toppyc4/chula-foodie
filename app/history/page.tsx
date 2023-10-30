@@ -1,5 +1,5 @@
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import Navbar2 from "../components/Navbar2";
 import SemiFoodItem from "../components/SemiFoodItem";
 
 import Image from "next/image";
@@ -9,7 +9,7 @@ const KinRaiMa = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar2 />
       <div className="mt-[5vh] mx-[2vh]">
         <h1 className="text-3xl">History (กินไรมา)</h1>
         <div className="flex flex-col p-4 overflow-auto">

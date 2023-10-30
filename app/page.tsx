@@ -6,7 +6,7 @@ import {
   auth,
   googleAuthProvider,
   facebookAuthProvider,
-} from "../lib/firebseConfig";
+} from "../lib/firebaseConfig";
 import { signInWithPopup } from "firebase/auth";
 
 import toast from "react-hot-toast";

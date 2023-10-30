@@ -3,13 +3,14 @@ import Footer from "../components/Footer";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 import Link from "next/link";
+import { useUserContext } from "../Context/store";
 
 const AdminPostPage = () => {
   const posts = [1, 2, 3, 4, 5];
   return (
     <>
       <Navbar2 />
-      <div className="max-h-[80vh]">
+      <div className="h-full">
         <div className="relative w-full h-[30vh] bg-fixed overflow-hidden flex">
           <Image
             fill

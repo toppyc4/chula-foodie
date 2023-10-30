@@ -33,37 +33,28 @@ const Footer = () => {
         </div>
       </footer> */}
       <footer className="h-[13vh] flex items-center justify-around px-4 border-t-2 bg-slate-700 border-gray-300 sticky bottom-0">
-        <Link
-          href={"/main"}
-          className="focus:outline-none bg-lime-500 hover:bg-lime-400 border-solid border-b-4 border-b-lime-700 p-2 rounded-md"
-        >
+        <Link href={"/main"} className="p-2 rounded-md">
           <Image
             src={"/icon/home.svg"}
             width={50}
             height={50}
             alt="profile pic"
-            className="cursor-pointer rounded-full"
+            className="cursor-pointer rounded-full invert"
             referrerPolicy="no-referrer"
           />
         </Link>
-        <Link
-          href={"/history"}
-          className="focus:outline-none bg-lime-500 hover:bg-lime-400 border-solid border-b-4 border-b-lime-700 p-2 rounded-md"
-        >
+        <Link href={"/history"} className="p-2 rounded-md">
           <Image
             src={"/icon/clock.svg"}
             width={50}
             height={50}
             alt="profile pic"
-            className="cursor-pointer rounded-full"
+            className="cursor-pointer rounded-full invert"
             referrerPolicy="no-referrer"
           />
         </Link>
 
-        <Link
-          href={`/user`}
-          className="focus:outline-none bg-lime-500 hover:bg-lime-400 border-solid border-b-4 border-b-lime-700 p-2 rounded-md"
-        >
+        <Link href={`/user`} className="p-2 rounded-md">
           <Image
             src={"/img/question-mark-profile.jpg"}
             width={50}
